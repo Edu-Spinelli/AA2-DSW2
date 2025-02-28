@@ -8,6 +8,7 @@ from routes.estoque import estoque_bp
 from routes.vendas import vendas_bp
 from routes.pagamentos import pagamentos_bp
 from routes.whatsapp import whatsapp_bp
+from routes.api import api_bp
 import os
 
 app = Flask(__name__)
@@ -27,6 +28,7 @@ app.register_blueprint(estoque_bp)
 app.register_blueprint(vendas_bp)
 app.register_blueprint(pagamentos_bp)
 app.register_blueprint(whatsapp_bp)
+app.register_blueprint(api_bp)
 
 
 # Configuração do diretório de uploads
