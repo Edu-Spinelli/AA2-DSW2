@@ -5,6 +5,9 @@ from config import DATABASE_URL
 from models import db
 from routes.clientes import clientes_bp
 from routes.estoque import estoque_bp
+from routes.vendas import vendas_bp
+from routes.pagamentos import pagamentos_bp
+from routes.whatsapp import whatsapp_bp
 import os
 
 app = Flask(__name__)
@@ -21,6 +24,10 @@ with app.app_context():
 # Registrando as rotas
 app.register_blueprint(clientes_bp)
 app.register_blueprint(estoque_bp)
+app.register_blueprint(vendas_bp)
+app.register_blueprint(pagamentos_bp)
+app.register_blueprint(whatsapp_bp)
+
 
 # Configuração do diretório de uploads
 UPLOAD_FOLDER = "uploads/"
