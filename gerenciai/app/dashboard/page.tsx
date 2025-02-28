@@ -292,17 +292,7 @@ export default function DashboardPage() {
     return valor.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })
   }
 
-  const enviarMensagemWhatsApp = async (cliente: any) => {
-    try {
-      await axios.post("http://127.0.0.1:5000/enviar-mensagem", {
-        cliente_id: cliente.id,
-      })
-      alert(`Mensagem enviada para ${cliente.nome} no WhatsApp!`)
-    } catch (error) {
-      console.error("Erro ao enviar mensagem:", error)
-      alert("Erro ao enviar mensagem!")
-    }
-  }
+  
 
   return (
     <div className="bg-purple-900 text-white min-h-screen flex flex-col">
@@ -359,12 +349,7 @@ export default function DashboardPage() {
                       >
                         Registrar Pagamento
                       </button>
-                      <button
-                        className="bg-green-600 hover:bg-green-500 rounded px-3 py-1 text-sm"
-                        onClick={() => enviarMensagemWhatsApp(cliente)}
-                      >
-                        Enviar WhatsApp
-                      </button>
+                     
                     </td>
                   </tr>
                 ))}
